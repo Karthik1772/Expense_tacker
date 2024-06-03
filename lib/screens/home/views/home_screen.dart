@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:expense_tracker/screens/home/views/main_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -44,9 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Icon(CupertinoIcons.add),
         ),
         shape: CircleBorder(),
-        backgroundColor: Colors.red,
       ),
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.pink,
+      body: MainScreen(),
     );
   }
 }
