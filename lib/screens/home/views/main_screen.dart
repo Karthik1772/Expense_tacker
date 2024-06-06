@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -63,11 +65,17 @@ class _MainScreenState extends State<MainScreen> {
                     onPressed: () {}, icon: Icon(CupertinoIcons.settings))
               ],
             ),
+            SizedBox(height: 20),
             Container(
-              width: double.infinity,
-              height: 500,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.width/2,
               decoration: BoxDecoration(
-                color: Colors.red
+                gradient: LinearGradient(colors: [
+                  Theme.of(context).colorScheme.primary,
+                  Theme.of(context).colorScheme.secondary,
+                  Theme.of(context).colorScheme.tertiary,
+                ], transform: GradientRotation(pi / 4)),
+                borderRadius: BorderRadius.circular(25)
               ),
             )
           ],
