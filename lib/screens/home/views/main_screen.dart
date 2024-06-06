@@ -16,34 +16,32 @@ class _MainScreenState extends State<MainScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10),
         child: Column(
           children: [
-            Container(
-              color: Colors.green,
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle, color: Colors.yellow[700]),
-                      ),
-                      Icon(
-                        CupertinoIcons.person_fill,
-                        color: Theme.of(context).colorScheme.outline,
-                      )
-                    ],
-                  ),
-                  SizedBox(width: 8),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Column(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.yellow[700]),
+                        ),
+                        Icon(
+                          CupertinoIcons.person_fill,
+                          color: Theme.of(context).colorScheme.outline,
+                        )
+                      ],
+                    ),
+                    SizedBox(width: 8),
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text( 
+                        Text(
                           "Welcome!",
                           style: TextStyle(
                               fontSize: 12,
@@ -58,12 +56,18 @@ class _MainScreenState extends State<MainScreen> {
                               color: Theme.of(context).colorScheme.onSurface),
                         ),
                       ],
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: IconButton(onPressed: (){}, icon: Icon(CupertinoIcons.settings)))
-                ],
+                    ), 
+                  ],
+                ),
+                IconButton(
+                    onPressed: () {}, icon: Icon(CupertinoIcons.settings))
+              ],
+            ),
+            Container(
+              width: double.infinity,
+              height: 500,
+              decoration: BoxDecoration(
+                color: Colors.red
               ),
             )
           ],

@@ -14,40 +14,40 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
-        child: BottomNavigationBar(
-            backgroundColor: Colors.white,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            items: const [
-              BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.home), label: "Home"),
-              BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.graph_square_fill), label: "Home"),
-            ]),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(colors: [
-                Theme.of(context).colorScheme.tertiary,
-                Theme.of(context).colorScheme.secondary,
-                Theme.of(context).colorScheme.primary,
-              ], transform: GradientRotation(pi / 4))),
-          child: Icon(CupertinoIcons.add),
+    return SafeArea(
+      child: Scaffold(
+        bottomNavigationBar: ClipRRect(
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
+          child: BottomNavigationBar(
+              backgroundColor: Colors.white,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              items: const [
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.home), label: "Home"),
+                BottomNavigationBarItem(
+                    icon: Icon(CupertinoIcons.graph_square_fill), label: "Home"),
+              ]),
         ),
-        shape: CircleBorder(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(colors: [
+                  Theme.of(context).colorScheme.tertiary,
+                  Theme.of(context).colorScheme.secondary,
+                  Theme.of(context).colorScheme.primary,
+                ], transform: GradientRotation(pi / 4))),
+            child: Icon(CupertinoIcons.add),
+          ),
+          shape: CircleBorder(),
+        ),
+        body: MainScreen(),
       ),
-      backgroundColor: Colors.pink,
-      body: MainScreen(),
     );
   }
 }
