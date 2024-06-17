@@ -199,7 +199,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ), //card column ends
               ), //card container ends
               const SizedBox(
-                height: 20,
+                height: 25,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text("Transactions",style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold),),
+                  Text("View All",style: TextStyle(fontSize: 16,color: Colors.grey,fontWeight: FontWeight.w500),)
+                ],
               )
             ],
           ), //main column ends
