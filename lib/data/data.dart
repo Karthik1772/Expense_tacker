@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-List<Map<String,dynamic>> TransactionsData = [
+List<Map<String,dynamic>> transactionsData = [
 {
   'icon': Icons.fastfood,
   'color':Colors.yellow.shade700,

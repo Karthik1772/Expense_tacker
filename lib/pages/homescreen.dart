@@ -221,7 +221,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ), //row ends
             Expanded(
               child: ListView.builder(
-                  itemCount: TransactionsData.length,
+                  itemCount: transactionsData.length,
                   itemBuilder: (context, int i) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -242,19 +242,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                     width: 50,
                                     height: 50,
                                     child: Icon(
-                                      TransactionsData[i]['icon'],
+                                      transactionsData[i]['icon'],
                                       color: Colors.white,
                                       size: 30,
                                     ),
                                     decoration: BoxDecoration(
-                                        color: TransactionsData[i]['color'],
+                                        color: transactionsData[i]['color'],
                                         shape: BoxShape.circle),
                                   ),
                                   SizedBox(
                                     width: 10,
                                   ),
                                   Text(
-                                    TransactionsData[i]['name'],
+                                    transactionsData[i]['name'],
                                     style: TextStyle(
                                         fontSize: 16,
                                         color: Theme.of(context)
@@ -267,7 +267,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Column(
                                 children: [
                                   Text(
-                                    TransactionsData[i]['totalAmount'],
+                                    transactionsData[i]['totalAmount'],
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Theme.of(context)
@@ -276,7 +276,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         fontWeight: FontWeight.w400),
                                   ),
                                   Text(
-                                    TransactionsData[i]['date'],
+                                    transactionsData[i]['date'],
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Theme.of(context)
