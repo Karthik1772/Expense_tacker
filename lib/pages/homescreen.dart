@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:expense_tracker/data/data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -220,7 +221,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ), //row ends
             Expanded(
               child: ListView.builder(
-                  itemCount: 3,
+                  itemCount: TransactionsData.length,
                   itemBuilder: (context, int i) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -241,19 +242,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                     width: 50,
                                     height: 50,
                                     child: Icon(
-                                      Icons.fastfood_sharp,
+                                      TransactionsData[i]['icon'],
                                       color: Colors.white,
                                       size: 30,
                                     ),
                                     decoration: BoxDecoration(
-                                        color: Colors.yellow[700],
+                                        color: TransactionsData[i]['color'],
                                         shape: BoxShape.circle),
                                   ),
                                   SizedBox(
                                     width: 10,
                                   ),
                                   Text(
-                                    "Food",
+                                    TransactionsData[i]['name'],
                                     style: TextStyle(
                                         fontSize: 16,
                                         color: Theme.of(context)
@@ -266,7 +267,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Column(
                                 children: [
                                   Text(
-                                    "-\$45.00",
+                                    TransactionsData[i]['totalAmount'],
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Theme.of(context)
@@ -275,7 +276,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         fontWeight: FontWeight.w400),
                                   ),
                                   Text(
-                                    "Today",
+                                    TransactionsData[i]['date'],
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Theme.of(context)
