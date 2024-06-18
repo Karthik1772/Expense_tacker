@@ -1,6 +1,7 @@
 import 'dart:math';
-import 'package:expense_tracker/pages/homescreen.dart';
-import 'package:expense_tracker/pages/stats.dart';
+
+import 'package:expense_tracker/pages/HomePage/homescreen.dart';
+import 'package:expense_tracker/pages/StatisticsPage/stats.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,12 +19,13 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
         backgroundColor: Colors.grey.shade200,
         bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Theme.of(context).colorScheme.secondary,
+          unselectedItemColor: Theme.of(context).colorScheme.tertiary,
             onTap: (value) {
               setState(() {
                 index = value;
               });
-              print(value);
-            },
+            },currentIndex: index,
             backgroundColor: Colors.white,
             showSelectedLabels: false,
             showUnselectedLabels: false,
