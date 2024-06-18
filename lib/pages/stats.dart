@@ -15,15 +15,21 @@ class _StatsState extends State<Stats> {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(//main column starts
+        child: Column(
+          //main column starts
           children: [
-             Row(//top row starts
+            Row(
+              //top row starts
               children: [
-                IconButton(onPressed: (){HomeScreen();}, icon: Icon(CupertinoIcons.arrow_left))
+                IconButton(
+                    onPressed: () {
+                      HomeScreen();
+                    },
+                    icon: Icon(CupertinoIcons.arrow_left))
               ],
-             )//top row ends
+            ) //top row ends
           ],
-        ),//main column ends
+        ), //main column ends
       ),
     );
   }
