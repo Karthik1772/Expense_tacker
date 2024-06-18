@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:expense_tracker/pages/homescreen.dart';
 import 'package:expense_tracker/pages/stats.dart';
 import 'package:flutter/cupertino.dart';
