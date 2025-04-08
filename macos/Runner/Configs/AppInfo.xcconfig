@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = expense_tracker
+PRODUCT_NAME = expence
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.expenseTracker
+PRODUCT_BUNDLE_IDENTIFIER = com.example.expence
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2025 com.example. All rights reserved.
