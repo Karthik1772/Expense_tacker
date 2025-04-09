@@ -90,6 +90,7 @@ class TransactionList extends StatelessWidget {
     );
   }
 
+
   // Widget to display category filters
   Widget _buildCategoryFilter(BuildContext context) {
     final transactionProvider = Provider.of<TransactionProvider>(context);

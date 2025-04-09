@@ -24,13 +24,13 @@ class SetBudget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       elevation: 5,
       child: Container(
-        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             CustomTextField(
               controller: _budgetController,
               hint: "Monthly Budget",

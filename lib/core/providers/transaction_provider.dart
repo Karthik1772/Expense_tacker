@@ -21,8 +21,13 @@ class TransactionProvider with ChangeNotifier {
   String get selectedCategory => _selectedCategory;
   double get monthlyBudget => _monthlyBudget;
 
-  List<String> get categories =>
-      ['All', 'Food', 'Transport', 'Entertainment', 'Others'];
+  List<String> get categories => [
+    'All',
+    'Food',
+    'Transport',
+    'Entertainment',
+    'Others',
+  ];
 
   TransactionProvider() {
     _loadTransactions(); // Load transactions when the provider is initialized
@@ -37,7 +42,11 @@ class TransactionProvider with ChangeNotifier {
 
   // Add Transaction
   void addTransaction(
-      String title, double amount, DateTime date, String category) async {
+    String title,
+    double amount,
+    DateTime date,
+    String category,
+  ) async {
     final newTransaction = Transaction(
       id: DateTime.now().toString(),
       title: title,
@@ -81,15 +90,18 @@ class TransactionProvider with ChangeNotifier {
   // Save Transactions to Shared Preferences
   Future<void> _saveTransactions() async {
     final prefs = await SharedPreferences.getInstance();
-    List<String> transactionList = _transactions
-        .map((tx) => json.encode({
-              'id': tx.id,
-              'title': tx.title,
-              'amount': tx.amount,
-              'date': tx.date.toIso8601String(),
-              'category': tx.category,
-            }))
-        .toList();
+    List<String> transactionList =
+        _transactions
+            .map(
+              (tx) => json.encode({
+                'id': tx.id,
+                'title': tx.title,
+                'amount': tx.amount,
+                'date': tx.date.toIso8601String(),
+                'category': tx.category,
+              }),
+            )
+            .toList();
     prefs.setStringList('transactions', transactionList);
   }
 
@@ -98,16 +110,17 @@ class TransactionProvider with ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     final transactionList = prefs.getStringList('transactions');
     if (transactionList != null) {
-      _transactions = transactionList.map((item) {
-        final data = json.decode(item);
-        return Transaction(
-          id: data['id'],
-          title: data['title'],
-          amount: data['amount'],
-          date: DateTime.parse(data['date']),
-          category: data['category'],
-        );
-      }).toList();
+      _transactions =
+          transactionList.map((item) {
+            final data = json.decode(item);
+            return Transaction(
+              id: data['id'],
+              title: data['title'],
+              amount: data['amount'],
+              date: DateTime.parse(data['date']),
+              category: data['category'],
+            );
+          }).toList();
       notifyListeners();
     }
   }
