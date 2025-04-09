@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.lightTheme,
       onGenerateRoute: Routes.onGenerate,
-      initialRoute: "/home",
+      initialRoute: "/splash",
     );
   }
 }
