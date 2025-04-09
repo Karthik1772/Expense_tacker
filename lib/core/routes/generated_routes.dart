@@ -1,6 +1,6 @@
 
-import 'package:Xpenso/features/home_screen.dart';
-import 'package:Xpenso/features/splash.dart';
+import 'package:Xpenso/features/homeScreen/home_screen.dart';
+import 'package:Xpenso/features/splashScreen/splash.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
