@@ -1,6 +1,7 @@
+import 'package:expence/core/common/custom_textfield.dart';
+import 'package:expence/core/providers/transaction_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sample/providers/transaction_provider.dart';
 
 class SetBudget extends StatelessWidget {
   final _budgetController = TextEditingController();
@@ -12,8 +13,10 @@ class SetBudget extends StatelessWidget {
     if (enteredBudget == null || enteredBudget <= 0) {
       return;
     }
-    Provider.of<TransactionProvider>(context, listen: false)
-        .setMonthlyBudget(enteredBudget);
+    Provider.of<TransactionProvider>(
+      context,
+      listen: false,
+    ).setMonthlyBudget(enteredBudget);
     Navigator.of(context).pop();
   }
 
@@ -26,15 +29,18 @@ class SetBudget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            TextField(
-              decoration: const InputDecoration(labelText: 'Monthly Budget'),
+            CustomTextField(
               controller: _budgetController,
-              keyboardType: TextInputType.number,
+              hint: "Monthly Budget",
             ),
             ElevatedButton(
               child: const Text('Set Budget'),
               onPressed: () => _submitBudget(context),
             ),
+            // CustomButtons(
+            //   text: "Set Budget",
+            //   onpressed: () => _submitBudget(context),
+            // ),
           ],
         ),
       ),

@@ -1,9 +1,9 @@
+import 'package:expence/core/constants/add_transaction.dart';
+import 'package:expence/core/constants/set_budget.dart';
+import 'package:expence/core/constants/transaction_list.dart';
+import 'package:expence/core/providers/transaction_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sample/widgets/set_budget.dart';
-import 'package:sample/widgets/transaction_list.dart';
-import 'package:sample/widgets/add_transaction.dart';
-import 'package:sample/providers/transaction_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,38 +11,37 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final transactionProvider = Provider.of<TransactionProvider>(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Expense Tracker'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                builder: (_) => SetBudget(),
-              );
-            },
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: TransactionList(),
-          ),
-          _buildBudgetSummary(
-              transactionProvider), // Move budget card below the transaction list
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showModalBottomSheet(
-            context: context,
-            builder: (_) => AddTransaction(),
-          );
-        },
-        child: const Icon(Icons.add),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Expense Tracker'),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.settings),
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (_) => SetBudget(),
+                );
+              },
+            ),
+          ],
+        ),
+        body: Column(
+          children: [
+            Expanded(child: TransactionList()),
+            _buildBudgetSummary(transactionProvider),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (_) => AddTransaction(),
+            );
+          },
+          child: const Icon(Icons.add),
+        ),
       ),
     );
   }
@@ -61,8 +60,10 @@ class HomeScreen extends StatelessWidget {
             children: [
               Text(
                 'Monthly Budget: \$${transactionProvider.monthlyBudget.toStringAsFixed(2)}',
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               Text(
                 'Total Expenses: \$${transactionProvider.monthlyExpenses.toStringAsFixed(2)}',

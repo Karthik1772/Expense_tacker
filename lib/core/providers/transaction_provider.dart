@@ -1,7 +1,7 @@
 import 'dart:convert'; // For JSON encoding/decoding
+import 'package:expence/core/models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sample/models/transaction.dart';
 
 class TransactionProvider with ChangeNotifier {
   List<Transaction> _transactions = [];

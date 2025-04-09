@@ -1,7 +1,8 @@
+import 'package:expence/core/providers/transaction_provider.dart';
+import 'package:expence/core/routes/generated_routes.dart';
+import 'package:expence/core/themes/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'providers/transaction_provider.dart';
 import 'package:provider/provider.dart';
-import 'screens/home_screen.dart';
 
 void main() {
   runApp(
@@ -14,6 +15,7 @@ void main() {
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -23,11 +25,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Expense Tracker',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: HomeScreen(),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.lightTheme,
+      onGenerateRoute: Routes.onGenerate,
+      initialRoute: "/home",
     );
   }
 }
