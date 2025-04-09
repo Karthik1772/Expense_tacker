@@ -34,6 +34,11 @@ class TransactionList extends StatelessWidget {
                     itemBuilder: (ctx, index) {
                       final tx = transactions[index];
                       return Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          side: BorderSide(color: AppColors.orange),
+                        ),
+                        shadowColor: AppColors.lightorange,
                         margin: const EdgeInsets.symmetric(
                           vertical: 8,
                           horizontal: 10,

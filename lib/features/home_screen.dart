@@ -2,7 +2,9 @@ import 'package:expence/core/constants/add_transaction.dart';
 import 'package:expence/core/constants/set_budget.dart';
 import 'package:expence/core/constants/transaction_list.dart';
 import 'package:expence/core/providers/transaction_provider.dart';
+import 'package:expence/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Expense Tracker'),
+          title: Text('Expense Tracker', style: GoogleFonts.poppins()),
           actions: [
             IconButton(
               icon: const Icon(Icons.settings),
@@ -34,13 +36,14 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: AppColors.orange,
           onPressed: () {
             showModalBottomSheet(
               context: context,
               builder: (_) => AddTransaction(),
             );
           },
-          child: const Icon(Icons.add),
+          child: const Icon(Icons.add, color: AppColors.white, size: 30),
         ),
       ),
     );
@@ -67,7 +70,7 @@ class HomeScreen extends StatelessWidget {
               ),
               Text(
                 'Total Expenses: \$${transactionProvider.monthlyExpenses.toStringAsFixed(2)}',
-                style: const TextStyle(fontSize: 16, color: Colors.redAccent),
+                style: TextStyle(fontSize: 16, color: AppColors.red),
               ),
               Text(
                 'Remaining Budget: \$${transactionProvider.remainingBudget.toStringAsFixed(2)}',

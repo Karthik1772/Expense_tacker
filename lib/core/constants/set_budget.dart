@@ -1,3 +1,4 @@
+import 'package:expence/core/common/custom_buttons.dart';
 import 'package:expence/core/common/custom_textfield.dart';
 import 'package:expence/core/providers/transaction_provider.dart';
 import 'package:flutter/material.dart';
@@ -29,18 +30,18 @@ class SetBudget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
+            SizedBox(height: 10),
             CustomTextField(
               controller: _budgetController,
               hint: "Monthly Budget",
             ),
-            ElevatedButton(
-              child: const Text('Set Budget'),
-              onPressed: () => _submitBudget(context),
+            SizedBox(height: 20),
+            CustomButtons(
+              textSize: 13,
+              width: 130,
+              text: "Set Budget",
+              onpressed: () => _submitBudget(context),
             ),
-            // CustomButtons(
-            //   text: "Set Budget",
-            //   onpressed: () => _submitBudget(context),
-            // ),
           ],
         ),
       ),

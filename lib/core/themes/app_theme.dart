@@ -17,7 +17,7 @@ class AppTheme {
       //__________________________________________________________APP_BAR
       backgroundColor: AppColors.orange,
       iconTheme: IconThemeData(color: AppColors.white),
-      actionsIconTheme: IconThemeData(color: AppColors.white), 
+      actionsIconTheme: IconThemeData(color: AppColors.white),
       elevation: 0,
       titleTextStyle: GoogleFonts.poppins(
         color: AppColors.white,
