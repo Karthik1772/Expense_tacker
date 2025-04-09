@@ -1,6 +1,6 @@
-import 'package:expence/core/common/custom_buttons.dart';
-import 'package:expence/core/providers/transaction_provider.dart';
-import 'package:expence/core/themes/app_colors.dart';
+import 'package:Xpenso/core/common/custom_buttons.dart';
+import 'package:Xpenso/core/providers/transaction_provider.dart';
+import 'package:Xpenso/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';

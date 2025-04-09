@@ -1,6 +1,6 @@
-import 'package:expence/core/providers/transaction_provider.dart';
-import 'package:expence/core/routes/generated_routes.dart';
-import 'package:expence/core/themes/app_theme.dart';
+import 'package:Xpenso/core/providers/transaction_provider.dart';
+import 'package:Xpenso/core/routes/generated_routes.dart';
+import 'package:Xpenso/core/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

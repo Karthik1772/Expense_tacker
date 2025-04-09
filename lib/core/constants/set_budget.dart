@@ -1,6 +1,6 @@
-import 'package:expence/core/common/custom_buttons.dart';
-import 'package:expence/core/common/custom_textfield.dart';
-import 'package:expence/core/providers/transaction_provider.dart';
+import 'package:Xpenso/core/common/custom_buttons.dart';
+import 'package:Xpenso/core/common/custom_textfield.dart';
+import 'package:Xpenso/core/providers/transaction_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

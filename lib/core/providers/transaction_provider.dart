@@ -1,5 +1,5 @@
 import 'dart:convert'; // For JSON encoding/decoding
-import 'package:expence/core/models/transaction.dart';
+import 'package:Xpenso/core/models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

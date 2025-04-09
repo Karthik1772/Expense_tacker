@@ -1,6 +1,6 @@
 
-import 'package:expence/features/home_screen.dart';
-import 'package:expence/features/splash.dart';
+import 'package:Xpenso/features/home_screen.dart';
+import 'package:Xpenso/features/splash.dart';
 import 'package:flutter/material.dart';
 
 class Routes {

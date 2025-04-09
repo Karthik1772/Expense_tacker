@@ -1,8 +1,8 @@
-import 'package:expence/core/constants/add_transaction.dart';
-import 'package:expence/core/constants/set_budget.dart';
-import 'package:expence/core/constants/transaction_list.dart';
-import 'package:expence/core/providers/transaction_provider.dart';
-import 'package:expence/core/themes/app_colors.dart';
+import 'package:Xpenso/core/constants/add_transaction.dart';
+import 'package:Xpenso/core/constants/set_budget.dart';
+import 'package:Xpenso/core/constants/transaction_list.dart';
+import 'package:Xpenso/core/providers/transaction_provider.dart';
+import 'package:Xpenso/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Expense Tracker', style: GoogleFonts.poppins()),
+          title: Text('Xpenso', style: GoogleFonts.poppins()),
           actions: [
             IconButton(
               icon: const Icon(Icons.settings),

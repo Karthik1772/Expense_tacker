@@ -1,4 +1,4 @@
-import 'package:expence/core/themes/app_colors.dart';
+import 'package:Xpenso/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
