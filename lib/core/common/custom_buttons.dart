@@ -6,10 +6,14 @@ class CustomButtons extends StatefulWidget {
   final String text;
   final VoidCallback onpressed;
   final bool isLoading;
+  final double textSize;
+  final double? width;
   const CustomButtons({
     super.key,
     required this.text,
+    this.width,
     required this.onpressed,
+    required this.textSize,
     this.isLoading = false,
   });
 
@@ -21,7 +25,8 @@ class _CustomButtons extends State<CustomButtons> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 40,
+      width: widget.width,
       margin: EdgeInsets.only(left: 20, right: 20),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -45,7 +50,7 @@ class _CustomButtons extends State<CustomButtons> {
                   widget.text,
                   style: GoogleFonts.varelaRound(
                     color: AppColors.white,
-                    fontSize: 20,
+                    fontSize: widget.textSize,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

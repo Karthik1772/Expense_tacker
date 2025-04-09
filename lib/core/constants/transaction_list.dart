@@ -1,3 +1,4 @@
+import 'package:expence/core/common/custom_buttons.dart';
 import 'package:expence/core/providers/transaction_provider.dart';
 import 'package:expence/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -140,24 +141,48 @@ class TransactionList extends StatelessWidget {
       context: context,
       builder:
           (ctx) => AlertDialog(
-            title: const Text('Are you sure?'),
-            content: const Text('Do you want to remove this transaction?'),
-            actions: <Widget>[
-              TextButton(
-                child: const Text('Cancel'),
-                onPressed: () {
-                  Navigator.of(ctx).pop();
-                },
+            backgroundColor: AppColors.white,
+            title: Text(
+              'Are you sure?',
+              style: GoogleFonts.varelaRound(
+                fontSize: 28,
+                color: AppColors.orange,
               ),
-              TextButton(
-                child: const Text('Delete'),
-                onPressed: () {
-                  Provider.of<TransactionProvider>(
-                    context,
-                    listen: false,
-                  ).deleteTransaction(transactionId);
-                  Navigator.of(ctx).pop();
-                },
+            ),
+            content: Text(
+              'Do you want to remove this transaction?',
+              style: GoogleFonts.varelaRound(
+                fontSize: 13,
+                color: AppColors.orange,
+              ),
+            ),
+            actions: <Widget>[
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CustomButtons(
+                      textSize: 13,
+                      text: "Cancel",
+                      width: 92,
+                      onpressed: () {
+                        Navigator.of(ctx).pop();
+                      },
+                    ),
+                    CustomButtons(
+                      textSize: 13,
+                      width: 92,
+                      text: "Delete",
+                      onpressed: () {
+                        Provider.of<TransactionProvider>(
+                          context,
+                          listen: false,
+                        ).deleteTransaction(transactionId);
+                        Navigator.of(ctx).pop();
+                      },
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

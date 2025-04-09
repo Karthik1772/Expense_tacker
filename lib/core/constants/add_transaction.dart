@@ -78,7 +78,11 @@ class _AddTransactionState extends State<AddTransaction> {
               },
             ),
             const SizedBox(height: 10),
-            CustomButtons(text: "Add Transaction", onpressed: _submitData),
+            CustomButtons(
+              text: "Add Transaction",
+              onpressed: _submitData,
+              textSize: 20,
+            ),
           ],
         ),
       ),
