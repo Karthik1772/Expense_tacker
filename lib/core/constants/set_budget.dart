@@ -32,6 +32,7 @@ class SetBudget extends StatelessWidget {
           children: <Widget>[
             SizedBox(height: 20),
             CustomTextField(
+              keyboardType: TextInputType.number,
               controller: _budgetController,
               hint: "Monthly Budget",
             ),

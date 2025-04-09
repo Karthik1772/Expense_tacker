@@ -62,18 +62,18 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Monthly Budget: \$${transactionProvider.monthlyBudget.toStringAsFixed(2)}',
+                'Monthly Budget: \₹${transactionProvider.monthlyBudget.toStringAsFixed(2)}',
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                'Total Expenses: \$${transactionProvider.monthlyExpenses.toStringAsFixed(2)}',
+                'Total Expenses: \₹${transactionProvider.monthlyExpenses.toStringAsFixed(2)}',
                 style: TextStyle(fontSize: 16, color: AppColors.red),
               ),
               Text(
-                'Remaining Budget: \$${transactionProvider.remainingBudget.toStringAsFixed(2)}',
+                'Remaining Budget: \₹${transactionProvider.remainingBudget.toStringAsFixed(2)}',
                 style: const TextStyle(fontSize: 16, color: Colors.green),
               ),
             ],

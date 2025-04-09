@@ -63,9 +63,17 @@ class _AddTransactionState extends State<AddTransaction> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            CustomTextField(controller: _titleController, hint: 'Title'),
+            CustomTextField(
+              controller: _titleController,
+              hint: 'Title',
+              keyboardType: TextInputType.name,
+            ),
             SizedBox(height: 10),
-            CustomTextField(controller: _amountController, hint: 'Amount'),
+            CustomTextField(
+              controller: _amountController,
+              hint: 'Amount',
+              keyboardType: TextInputType.number,
+            ),
             SizedBox(height: 20),
             CustomDropDown(
               list: _categories,
@@ -89,4 +97,3 @@ class _AddTransactionState extends State<AddTransaction> {
     );
   }
 }
-

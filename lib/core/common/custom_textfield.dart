@@ -6,12 +6,12 @@ class CustomTextField extends StatefulWidget {
   final String hint;
   final bool isObscure;
   final bool isPasswordField;
-  // final String type;
+  final TextInputType keyboardType;
   const CustomTextField({
     super.key,
     required this.controller,
     required this.hint,
-    // required this.type,
+    required this.keyboardType,
     this.isObscure = false,
     this.isPasswordField = false,
   });
@@ -34,7 +34,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       margin: EdgeInsets.only(left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       child: TextField(
-        // keyboardType: TextInputType.type,
+        keyboardType: widget.keyboardType,
         controller: widget.controller,
         cursorColor: AppColors.orange,
         cursorHeight: 18,
