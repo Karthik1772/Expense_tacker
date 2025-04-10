@@ -64,13 +64,28 @@ class TransactionList extends StatelessWidget {
                           trailing: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
-                              Text(
-                                '${tx.date.day}/${tx.date.month}/${tx.date.year}',
-                                style: GoogleFonts.quicksand(
-                                  fontSize: 12,
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    '${tx.date.day}/${tx.date.month}/${tx.date.year}',
+                                    style: GoogleFonts.quicksand(
+                                      fontSize: 12,
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    '${tx.date.hour.toString().padLeft(2, '0')}:${tx.date.minute.toString().padLeft(2, '0')}',
+                                    style: GoogleFonts.quicksand(
+                                      fontSize: 12,
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
                               ),
                               IconButton(
                                 icon: const Icon(
@@ -89,7 +104,6 @@ class TransactionList extends StatelessWidget {
       ],
     );
   }
-
 
   // Widget to display category filters
   Widget _buildCategoryFilter(BuildContext context) {
