@@ -39,17 +39,26 @@ lib/
 
 ### Prerequisites
 
-- [Flutter SDK](https://flutter.dev/docs/get-started/install)
-- Android Studio / VS Code
+- [Flutter SDK](https://flutter.dev/docs/get-started/install) installed
+- An IDE like [Android Studio](https://developer.android.com/studio) or [VS Code](https://code.visualstudio.com/)
 
 ### Installation
 
-```bash
-git clone https://github.com/Karthik1772/Xpenso.git
-cd Xpenso
-flutter pub get
-flutter run
-```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Karthik1772/Doozy.git
+   cd Doozy
+   ```
+
+2. **Fetch dependencies:**
+   ```bash
+   flutter pub get
+   ```
+
+3. **Run the application:**
+   ```bash
+   flutter run
+   ```
 
 ---
 
