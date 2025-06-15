@@ -83,9 +83,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-## 🙋‍♂️ Author
+## 🧑‍💻 Author
 
-- **Karthik S Kashyap**  
-  [GitHub Profile](https://github.com/Karthik1772)
+**Karthik S Kashyap**
+[GitHub](https://github.com/Karthik1772) • [LinkedIn](https://www.linkedin.com/in/karthik-s-kashyap-648908251/) • [Portfolio](https://karthik-s-kashyap.vercel.app/)
 
 ---
